@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Azure Delights Cookie Co. </title>
+            <style>
+                body{
+                    background-image: linear-gradient(to bottom, rgba(65, 105, 225, 0.281), white, white);
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align:center;
+                    padding: 30px 30px 30px 30px;
+                }
+                form{
+                    line-height: 1.5;
+                }
+                th{
+                    padding: 3px 10px;
+                }
+                h1,p{
+                    color: #000080;
+                }
+                td{
+                    text-align: center;
+                    line-height: 1.5;
+                    padding: 3px 10px;
+                }
+                h3{
+                    color:#ffffff;
+                    background-color: #000080;
+                    border-radius:25px;
+                    margin: 20px 20px;
+                }
+                .column {
+                    flex: 50%;
+                    padding: 10px;
+                }
+                .row {
+                    display:flex;
+                    flex-direction: row;
+                }
+                @media screen and ( max-width: 500px ) { 
+                    .row { 
+                        display:flex;
+                        flex-direction: column;
+                    }
+                }
+                #submit{
+                    background-color:#000080;
+                    border:0;
+                    color:#ffffff;
+                    padding:10px;
+                    border-radius:10px;
+                    cursor: pointer;
+                }
+                #options{
+                    background-color:#000080;
+                    border:0;
+                    color:#ffffff;
+                    border-radius:5px;
+                    cursor: pointer;
+                }
+                input{
+                    border-radius:5px;
+                }
+                #reset{
+                    background-color: #808080;
+                    border:0;
+                    color:#ffffff;
+                    padding:10px;
+                    border-radius:10px;
+                    cursor: pointer;
+                }
+                #submit:active, #reset:active{     
+                    background-color:#4169e1;    
+                }
+                footer{
+                    padding-top:20px;
+                    font-size: 10px;
+                }
+            </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Azure Delights Cookie Co.</h1>
+            <p><i>Shipping in Canada only!</i></p>
+        </header>
+        <hr>
+            <!-- FORMS -->
+            <form method="post">
+                <h2>Order Form:</h2>
+                <div class="row">
+                        <div class="column"> <!-- Form 1 -->
+                            <fieldset>
+                                <h3>SHIPPING ADDRESS:</h3>
+                                <label for="ship-name">Name: </label>
+                                <input type="text" name="ship-name" size="20" required><br>
+                                <label for="ship-add">Address: </label>
+                                <input type="text" name="ship-add" size="50" required><br>
+                                <label for="city">City: </label>
+                                <input type="text" name="city" size="10" required>
+                                <label for="ship-province">Province: </label>
+                                    <select name="ship-province" id="options" required>
+                                        <option value="" selected disabled hidden>Select Province</option>
+                                        <option value="ON">Ontario</option>
+                                        <option value="QC">Quebec</option>
+                                        <option value="NS">Nova Scotia</option>
+                                        <option value="NB">New Brunswick</option>
+                                        <option value="MB">Manitoba</option>
+                                        <option value="BC">British Columbia</option>
+                                        <option value="PE">Prince Edward Island</option>
+                                        <option value="SK">Saskatchewan</option>
+                                        <option value="AB">Alberta</option>
+                                        <option value="NL">Newfoundland and Labrador</option>
+                                    </select><br>
+                                <label for="ship-zip">ZIP Code: </label>
+                                <input type="text" name="ship-zip" size="6" maxlength="6" required>
+                                <label for="ship-tele">Telephone: </label>
+                                <input type="tel" name="ship-tele" size="15" maxlength="15" required><br>
+                                <label for="ship-email">Email: </label>
+                                <input type="email" name="ship-email" size="15" required>
+                            </fieldset>
+                    </div> <!-- Form 1 -->
+                    <div class="column"> <!-- Form 2 -->
+                        <fieldset>
+                            <h3>BILLING ADDRESS:</h3>
+                            <label for="bill-name">Name: </label>
+                            <input type="text" name="bill-name" size="20" required><br>
+                            <label for="bill-add">Address: </label>
+                            <input type="text" name="bill-add" size="50" required><br>
+                            <label for="bill-city">City: </label>
+                            <input type="text" name="bill-city" size="10" required>
+                            <label for="bill-province">Province: </label>
+                                <select name="bill-province" id="options" required>
+                                    <option value="" selected disabled hidden>Select Province</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                </select><br>
+                            <label for="bill-zip">ZIP Code: </label>
+                            <input type="text" name="bill-zip" size="6" maxlength="6" required>
+                            <label for="bill-tele">Telephone: </label>
+                            <input type="tel" name="bill-tele" size="15" maxlength="15" required><br>
+                            <label for="bill-email">Email: </label>
+                            <input type="email" name="bill-email" size="15" required>
+                        </fieldset>
+                    </div> <!-- Form 2 -->
+                </div>  
+                <!-- TABLE SECTION -->
+                <table bordercolor="black" border="1" align="center">
+                    <h3>PRODUCTS TO ORDER:</h3>
+                    <tr>
+                        <th>Flavor</th>
+                        <th>Quantity</th>
+                        <th>Repeat<br>Order</th>
+                        <th>Price</th>
+                        <th>Est. Cost</th>
+                    </tr>
+                    <tr> <!-- Item 1 -->
+                        <td>Chocolate Chip</td>
+                        <td>
+                            <select name="quantity" id="options" >
+                                <option value="" selected disabled hidden>QTY</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="repeat">
+                        </td>
+                        <td>$3.99</td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- Item 2 -->
+                        <td>Oatmeal Raisin</td>
+                        <td>
+                            <select name="quantity" id="options">
+                                <option value="" selected disabled hidden>QTY</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="repeat">
+                        </td>
+                        <td>$2.49</td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- Item 3 -->
+                        <td>Double Chocolate Fudge</td>
+                        <td>
+                            <select name="quantity" id="options">
+                                <option value="" selected disabled hidden>QTY</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="repeat">
+                        </td>
+                        <td>$4.79</td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- Item 4 -->
+                        <td>Peanut Butter</td>
+                        <td>
+                            <select name="quantity" id="options">
+                                <option value="" selected disabled hidden>QTY</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="repeat">
+                        </td>
+                        <td>$2.99</td>
+                        <td></td>
+                    </tr>
+                    <tr> <!-- Item 5 -->
+                        <td>Random</td>
+                        <td>
+                            <label for="random">Yes </label>
+                            <input type="checkbox" name="random">
+                        </td>
+                        <td></td>
+                        <td>$4.49</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><b>5% Sales Tax:</b></td> 
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;">
+                            Shipping Method:
+                            <select name="ship-method" id="options">
+                                <option value="" selected disabled hidden>Select Method</option>
+                                <option value="priority">Priority Shipping</option>
+                                <option value="standard">Standard Shipping</option>
+                                <option value="saver">Saver's Shipping</option>
+                                <option value="pickup">Pick-Up</option>
+                            </select> 
+                        </td> 
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><b>Total:</b></td> 
+                        <td></td>
+                    </tr>
+                </table>
+                <p>Total Sale:</p>
+                <input type="submit" name="Submit" value="Submit" id="submit">
+                <input type="reset" name="Reset" id="reset" value="Reset">
+            </form>
+    </body>
+</html>
